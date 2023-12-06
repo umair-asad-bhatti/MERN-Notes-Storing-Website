@@ -3,9 +3,9 @@ import { CiLight } from 'react-icons/ci'
 import { CiDark } from 'react-icons/ci'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
-import {MdLogout} from 'react-icons/md'
-import {AiOutlineHome} from 'react-icons/ai'
-import {BiUser} from 'react-icons/bi'
+import { MdLogout } from 'react-icons/md'
+import { AiOutlineHome } from 'react-icons/ai'
+import { BiUser } from 'react-icons/bi'
 const Navbar = ({ darkMode, setDarkMode, user, setUser }) => {
     const Navigate = useNavigate();
     const handleLogout = () => {
@@ -33,27 +33,26 @@ const Navbar = ({ darkMode, setDarkMode, user, setUser }) => {
 
                     {
                         user &&
-                        <button className='flex items-center justify-center gap-3 ' onClick={handleLogout}>Logout<MdLogout/></button>
+                        <button className='flex items-center justify-center gap-3 ' onClick={handleLogout}>Logout<MdLogout /></button>
                     }
                     {
                         user &&
-                        <li><Link className='flex items-center justify-center gap-2'  to={"/home"}><AiOutlineHome/><span>Home</span></Link></li>
+                        <li><Link className='flex items-center justify-center gap-2' to={"/home"}><AiOutlineHome /><span>Home</span></Link></li>
                     }
                     {
                         user &&
-                        <li><Link className='flex items-center justify-center gap-2' to={`/user/${user.googleId}`}><span>Profile</span><BiUser/></Link></li>
+                        <li><Link className='flex items-center justify-center gap-2' to={`/user/${user.googleId}`}><span>Profile</span><BiUser /></Link></li>
                     }
 
 
 
                     <button onClick={handleDarkMode} className="">
-                        
                         {
-                        
-                        darkMode ?
-                            <CiLight size={28} />
-                            : <CiDark size={28} />
-                    }</button>
+
+                            darkMode ?
+                                <CiLight size={28} />
+                                : <CiDark size={28} />
+                        }</button>
                 </ul>
 
             </div>
